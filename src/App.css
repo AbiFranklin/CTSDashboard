@@ -1,0 +1,17 @@
+.container {
+  margin: 25px auto;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px lightgrey;
+  padding: 10px;
+}
+
+.table-wrapper {
+  max-height: 500px;
+  width: 100%;
+  overflow: auto;
+  display: inline-block;
+}
+
+.inventory button {
+  margin: 3px !important;
+}
