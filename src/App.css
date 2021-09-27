@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .container {
   margin: 25px auto;
   border-radius: 10px;
@@ -16,22 +15,12 @@
 .inventory button {
   margin: 3px !important;
 }
-=======
-.container {
-  margin: 25px auto;
-  border-radius: 10px;
-  box-shadow: 1px 1px 5px lightgrey;
-  padding: 10px;
+
+td {
+  text-align: center;
 }
 
-.table-wrapper {
-  max-height: 500px;
-  width: 100%;
-  overflow: auto;
-  display: inline-block;
+.check {
+  margin: 2px auto !important;
+  border: 3px solid red !important;
 }
-
-.inventory button {
-  margin: 3px !important;
-}
->>>>>>> 1711b72c0cd6787d32db60dd30de7e41f7b2a95b

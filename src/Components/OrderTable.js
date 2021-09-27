@@ -1,84 +1,48 @@
-<<<<<<< HEAD
 import React from 'react';
-import { Table } from 'react-bootstrap';
+import { Table, Form } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGlobe, faPhone } from '@fortawesome/free-solid-svg-icons'
 
 
-function OrderTable() {
+class OrderTable extends React.Component {
+  render() {
+    var delivery = require('../fakedelivery.json')
+
+    var orders = delivery.map(function(order){
+      return (
+        <tr style={order.deliver === 1 ? {backgroundColor: '#198754bf'} : order.deliver === 2 ? {backgroundColor: '#ffc107bf'} : {backgroundColor: '#dc3545bf'}}>
+        <td>{order.id}</td>
+        <td>{order.web ? <FontAwesomeIcon icon={faGlobe} /> : <FontAwesomeIcon icon={faPhone} />}</td>
+        <td>{order.name}</td>
+        <td>{order.tracking}</td>
+        <td>{order.company}</td>
+        <td>{order.lastfour}</td>
+        <td>{order.total}</td>
+        <td>{order.paid ? <Form.Check type="checkbox" checked disabled class="check"/> : <Form.Check type="checkbox" class="check"/> }</td>
+      </tr>
+    )})
+
   return(
       <div class='table-wrapper'>
-    <Table striped bordered hover size="sm">
+    <Table bordered hover size="sm">
     <thead>
       <tr>
         <th>#</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Username</th>
+        <th>Source</th>
+        <th>Name</th>
+        <th>Tracking Number</th>
+        <th>Company</th>
+        <th>Last 4</th>
+        <th>Total</th>
+        <th>Card Charged</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>1</td>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td colSpan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
+      {orders}
     </tbody>
   </Table>
   </div>
   )
-}
+}}
 
-=======
-import React from 'react';
-import { Table } from 'react-bootstrap';
-
-
-function OrderTable() {
-  return(
-      <div class='table-wrapper'>
-    <Table striped bordered hover size="sm">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Username</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1</td>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td colSpan="2">Larry the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </Table>
-  </div>
-  )
-}
-
->>>>>>> 1711b72c0cd6787d32db60dd30de7e41f7b2a95b
 export default OrderTable;
